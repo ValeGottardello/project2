@@ -14,7 +14,6 @@ const methodOverride = require("./middlewares/method_override")
 
 
 //controllers
-// const postController = require("./controllers/post_controller")
 // const messageController = require("./controllers/message_controller")       not sure
 // const sessionController = require("./controllers/session_controller")
 // const userController = require("./controllers/user_controller")
@@ -46,7 +45,6 @@ app.use(
 
 //controllers
 // app.use(sessionController)
-// app.use(postController)
 // app.use(messageController)      not sure
 // app.use(userController)
 
