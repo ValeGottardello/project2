@@ -22,3 +22,5 @@ CREATE TABLE posts (
 -- INSERT INTO users (username, password_digest, image_url, country, learn_lang, native_lang, lang_level) VALUES ('vale@hotmail.com', 'mariana', 'http:url_image', 'Argentina', 'English', 'Spanish', 'Intermediate');
 
 -- INSERT INTO posts (comment, image_url, user_id) VALUES ('this is me', 'http:url_image', '27');
+
+

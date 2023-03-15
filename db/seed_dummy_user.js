@@ -1,6 +1,9 @@
-const db = require('./../db')
+// const db = require('./../db')
+const { Client } = require('pg')
 const bcrypt = require('bcrypt')
-
+const db = new Client ({
+    database: "talkers"
+})
 const username = 'vale@hotmail.com'
 const plainTextPassword = 'pudding'
 
