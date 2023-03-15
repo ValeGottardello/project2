@@ -9,13 +9,14 @@ const MemoryStore = require("memorystore")(session)
 
 // const setCurrentUser = require("./middlewares/set_current_user")
 // const viewHelpers = require("./middlewares/view_helpers")
-// const logger = require("./middlewares/logger")
+const logger = require("./middlewares/logger")
 const methodOverride = require("./middlewares/method_override")
 
 
 //controllers
-// const messageController = require("./controllers/message_controller")       not sure
-// const sessionController = require("./controllers/session_controller")
+// const postsController = require("./controllers/posts_controller")       not sure
+const dashboardController = require("./controllers/dashboard_controller")   
+const sessionController = require("./controllers/session_controller")
 // const userController = require("./controllers/user_controller")
 
 
@@ -44,8 +45,9 @@ app.use(
 // app.use(viewHelpers)
 
 //controllers
-// app.use(sessionController)
-// app.use(messageController)      not sure
+app.use(sessionController)
+app.use(dashboardController)      
+// app.use(postController)      
 // app.use(userController)
 
 app.listen(port, () => {
