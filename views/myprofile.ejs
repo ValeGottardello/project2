@@ -1,0 +1,33 @@
+<% for (let detail of myDetails) { %>
+    <section>
+        <article class="wrapper-profile">
+            <div>
+                <img src="<%= detail.image_url %>" alt="my photo">
+                <p>
+                    <%= detail.name %>
+                </p>
+                <p>
+                    From <%= detail.country %>
+                </p>
+            </div>
+            <div>
+                <h3>Learning Languages</h3>
+                <p>
+                    <%= detail.learn_lang %>
+                </p>
+            </div>
+            <div>
+                <h3>Native Language</h3>
+                <p>
+                    <%= detail.native_lang %>
+                </p>
+            </div>
+            <div>
+                <h3>About Me</h3>
+                <p>
+                    <%= detail.about_me %>
+                </p>
+            </div>
+        </article>
+    </section>
+    <% } %>

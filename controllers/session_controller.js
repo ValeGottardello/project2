@@ -40,6 +40,5 @@ router.delete('/sessions', (req,res) => {
         res.redirect('/login')
     })
 })
-//ADD logout botton
 
 module.exports = router

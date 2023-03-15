@@ -1,24 +1,34 @@
 <section>
-    <div>
-        <h3> Hello <%= username %>!</h3>
-    </div>
     <div class="wrapper-cards">
         <% for (let profile of users) {%>
-        <article class="ui-card">
-            <img src="<%= profile.image_url %>" alt="profile photo">
-            <h4><%= profile.username %></h4>
-            <footer class="ui-card-footer">
-                <div>
-                    <p> Learn Language </p>
-                    <p> <%= profile.learn_lang %> </p>
-                    <p> <%= profile.lang_level %> </p>
-                </div>
-                <div>
-                    <p> Native Language </p>
-                    <p> <%= profile.native_lang %> </p>
-                </div>
-            </footer>
-        </article>
+            <!-- to dont see my profile in the dashboard, just the other users profiles -->
+            <% if (profile.id !==currentUser.id) {%>
+                 <a href="/dash/<%= profile.id %>">
+                    <article class="ui-card">
+                        <img src="<%= profile.image_url %>" alt="profile photo">
+                        <h4>
+                            <%= profile.name %>
+                        </h4>
+                        <footer class="ui-card-footer">
+                            <div>
+                                <p> Learn Language </p>
+                                <p>
+                                    <%= profile.learn_lang %>
+                                </p>
+                                <p>
+                                    <%= profile.lang_level %>
+                                </p>
+                            </div>
+                            <div>
+                                <p> Native Language </p>
+                                <p>
+                                    <%= profile.native_lang %>
+                                </p>
+                            </div>
+                        </footer>
+                    </article> 
+                </a>
+            <% }%>
         <% } %>
     </div>
 </section>

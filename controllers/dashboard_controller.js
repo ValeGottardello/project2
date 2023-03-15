@@ -20,4 +20,20 @@ router.get('/dash', (req,res) => {
     })
 })
 
+router.get('/dash/:id', (req,res) => {
+
+    const userId = req.params.id
+    const sql = `SELECT * FROM users WHERE id = $1`
+
+    db.query(sql, [userId], (err,dbRes) => {
+        if (err) {
+            console.log(err);
+            res.redirect("/dash")
+        } else {
+            const userDetails = dbRes.rows
+            res.render('user_profile', {userDetails})
+        }
+    })
+})
+
 module.exports = router

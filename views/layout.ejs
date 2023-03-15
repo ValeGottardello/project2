@@ -10,9 +10,18 @@
 <body>
     <header>
         <% if (isLoggedIn()) { %>
+            <form action="/dash">
+                <button>Community</button>
+            </form>
             <form action="/sessions" method="post">
                 <input type="hidden" name="_method" value="delete" />
                 <button>Logout</button>
+            </form>
+            <form action="/users/<%= currentUser.id%>" >
+                <button>Setting account</button>
+            </form>
+            <form action="/users/<%= currentUser.id%>/profile">
+                <button>My Porfile</button>
             </form>
         <% } %>
     </header>
