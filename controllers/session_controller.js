@@ -24,7 +24,7 @@ router.post('/sessions', (req, res) => {
             if (result) {
                 req.session.userId = user.id
                 req.session.username = user.username
-                res.redirect('/')
+                res.redirect('/dash')
             } else {
                 console.log(err);
                 //maybe event listener with alerto of wrong password

@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <header>
+        <% if (isLoggedIn()) { %>
+            <form action="/sessions" method="post">
+                <input type="hidden" name="_method" value="delete" />
+                <button>Logout</button>
+            </form>
+        <% } %>
+    </header>
+
     <%- body %>
 </body>
 </html>

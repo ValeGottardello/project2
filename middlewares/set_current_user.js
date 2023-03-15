@@ -1,23 +1,24 @@
-// const db = require("./../db") 
+const db = require("./../db") 
 
-// function setCurrentUser(req, res, next) {
-//     const userId = req.session
-//     res.locals.currentUser = {}
+function setCurrentUser(req, res, next) {
+    const { userId } = req.session
+    
+    res.locals.currentUser = {}
 
-//     if (userId) {
-//         const sql = `SELECT id, email FROM users WHERE id = ${userId}`
+    if (userId) {
+        const sql = `SELECT id, username FROM users WHERE id = ${userId}`
 
-//         db.query(sql, (err, dbRes) => {
-//         if (err) {
-//             console.log(err)
-//         } else {
-//             res.locals.currentUser = dbRes.rows[0]
-//             next()
-//         }
-//         })
-//   } else {
-//     next()
-//   }
-// }
+        db.query(sql, (err, dbRes) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.locals.currentUser = dbRes.rows[0]
+            next()
+        }
+        })
+  } else {
+    next()
+  }
+}
 
-// module.exports = setCurrentUser
+module.exports = setCurrentUser

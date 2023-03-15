@@ -8,7 +8,7 @@ const MemoryStore = require("memorystore")(session)
 //middlewares
 
 // const setCurrentUser = require("./middlewares/set_current_user")
-// const viewHelpers = require("./middlewares/view_helpers")
+const viewHelpers = require("./middlewares/view_helpers")
 const logger = require("./middlewares/logger")
 const methodOverride = require("./middlewares/method_override")
 
@@ -17,7 +17,7 @@ const methodOverride = require("./middlewares/method_override")
 // const postsController = require("./controllers/posts_controller")       not sure
 const dashboardController = require("./controllers/dashboard_controller")   
 const sessionController = require("./controllers/session_controller")
-// const userController = require("./controllers/user_controller")
+const userController = require("./controllers/user_controller")
 
 
 const expressLayouts = require("express-ejs-layouts")
@@ -42,13 +42,13 @@ app.use(
 )
 //middlewares
 // app.use(setCurrentUser)
-// app.use(viewHelpers)
+app.use(viewHelpers)
 
 //controllers
 app.use(sessionController)
-app.use(dashboardController)      
+app.use(dashboardController) 
 // app.use(postController)      
-// app.use(userController)
+app.use(userController)
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`)

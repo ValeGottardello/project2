@@ -1,9 +1,9 @@
-// function ensureLoggedIn(req, res, next) {
-//   if (req.session.userId) {
-//     return next()
-//   }
+function ensureLoggedIn(req, res, next) {
+  if (req.session.userId) {
+    return next()
+  }
 
-//   res.redirect("/login")
-// }
+  res.redirect("/login")
+}
 
-// module.exports = ensureLoggedIn
+module.exports = ensureLoggedIn
