@@ -1,9 +1,6 @@
-<form action="/post/<%= currentUser.id %>/myposts">
-    <button>My posts</button>
-</form>
 <section>
     <div class="wrapper-cards">
-        <% for (let post of posts) {%>
+        <% for (let post of myPosts) {%>
             <article class="ui-card">
                 <a href="/post/<%= post.id %>/singlepost?user_name=<%=post.user_name%>&image_url=<%=post.image_url%>">
                     <img src="<%= post.image_url %>" alt="photo">

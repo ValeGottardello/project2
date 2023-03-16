@@ -18,16 +18,17 @@ router.post("/users", (req, res) => {
     const learn_lang = req.body.learn_lang
     const native_lang = req.body.native_lang
     const lang_level = req.body.lang_level
+    const imageUrl = req.body.imageUrl
 
     bcrypt.genSalt(10, (err, salt) => {
 
         bcrypt.hash(plainTextPassword, salt, (err, digestedPassword) => {
 
-            const sql = `INSERT INTO users (username, name, password_digest, country, learn_lang, native_lang, lang_level) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id;`
+            const sql = `INSERT INTO users (username, name, password_digest, image_url, country, learn_lang, native_lang, lang_level) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id;`
 
             // console.log(sql);
             // res.send("ok")
-            db.query(sql, [username, name,digestedPassword, country, learn_lang, native_lang, lang_level], (err, dbRes) => {
+            db.query(sql, [username, name,digestedPassword, imageUrl, country, learn_lang, native_lang, lang_level], (err, dbRes) => {
                 if (err) {
                     console.log(err);
                     res.render('signup')

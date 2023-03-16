@@ -72,5 +72,18 @@ router.delete("/post/:id", (req,res) => {
     })
 })
 
+router.get("/post/:id/myposts", (req,res) => {
+    const userId = req.params.id
+    const sql = `SELECT * FROM posts WHERE user_id = $1;`
 
+
+    db.query(sql, [userId], (err,dbRes) => {
+        if (err) {
+            console.log(err);
+        } else {
+            const myPosts = dbRes.rows
+            res.render('myposts', { myPosts })
+        }
+    })
+})
 module.exports = router
