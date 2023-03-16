@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+        <nav>
         <% if (isLoggedIn()) { %>
             <form action="/dash">
                 <button>Community</button>
@@ -23,7 +24,14 @@
             <form action="/users/<%= currentUser.id%>/profile">
                 <button>My Porfile</button>
             </form>
+            <form action="/post">
+                <button>Feed</button>
+            </form>
+            <form action="/post/newpost">
+                <button>Post</button>
+            </form>      
         <% } %>
+        </nav>
     </header>
 
     <%- body %>

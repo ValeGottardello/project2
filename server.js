@@ -13,7 +13,8 @@ const methodOverride = require("./middlewares/method_override")
 
 
 //controllers
-// const postsController = require("./controllers/posts_controller")       
+const commentsController = require("./controllers/comments_controller")
+const postsController = require("./controllers/posts_controller")       
 const dashboardController = require("./controllers/dashboard_controller")   
 const sessionController = require("./controllers/session_controller")
 const userController = require("./controllers/user_controller")
@@ -46,7 +47,8 @@ app.use(viewHelpers)
 //controllers
 app.use(sessionController)
 app.use(dashboardController) 
-// app.use(postController)      
+app.use(postsController)   
+app.use(commentsController)   
 app.use(userController)
 
 app.listen(port, () => {

@@ -7,7 +7,7 @@ router.get('/', (req,res) => {
     res.render('welcome')
 })
 
-router.get('/dash', (req,res) => {
+router.get('/dash', ensureLoggedIn, (req,res) => {
     
     const sql = 'SELECT * FROM users;'
 
@@ -20,7 +20,7 @@ router.get('/dash', (req,res) => {
     })
 })
 
-router.get('/dash/:id', (req,res) => {
+router.get('/dash/:id', ensureLoggedIn, (req,res) => {
 
     const userId = req.params.id
     const sql = `SELECT * FROM users WHERE id = $1`

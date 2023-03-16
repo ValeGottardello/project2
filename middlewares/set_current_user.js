@@ -13,7 +13,6 @@ function setCurrentUser(req, res, next) {
             console.log(err)
         } else {
             res.locals.currentUser = dbRes.rows[0]
-            // console.log(res.locals.currentUser);
             next()
         }
         })

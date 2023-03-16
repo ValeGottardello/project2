@@ -41,11 +41,11 @@ router.post("/users", (req, res) => {
     })
 })
 
-router.get("/users/:id", (req, res) => {
+router.get("/users/:id", ensureLoggedIn, (req, res) => {
     res.render('setting_account')
 })
 
-router.put('/users/:id', (req, res) => {
+router.put('/users/:id', ensureLoggedIn, (req, res) => {
 
     const plainTextPassword = req.body.password
     const oldpassword = req.body.oldpassword
@@ -70,7 +70,7 @@ router.put('/users/:id', (req, res) => {
 
 })
 
-router.delete("/users/:id", (req, res) => {
+router.delete("/users/:id", ensureLoggedIn, (req, res) => {
     const sql = `DELETE FROM users WHERE id = $1;`
 
     db.query(sql, [req.params.id], (err, dbRes) => {
@@ -86,7 +86,7 @@ router.delete("/users/:id", (req, res) => {
     })
 })
 
-router.get('/users/:id/profile', (req, res) => {
+router.get('/users/:id/profile', ensureLoggedIn, (req, res) => {
 
     const sql = 'SELECT * FROM users WHERE id = $1;'
 
@@ -99,7 +99,7 @@ router.get('/users/:id/profile', (req, res) => {
     })
 })
 
-router.put('/users/:id/profile', (req, res) => {
+router.put('/users/:id/profile', ensureLoggedIn, (req, res) => {
 
     const imageUrl = req.body.image_url
     const aboutMe = req.body.about_me

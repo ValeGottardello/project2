@@ -1,0 +1,9 @@
+<section>
+    <article>
+        <h3>Share your photo</h3>
+        <form action="/post/newpost/<%= currentUser.id %>/<%= currentUser.username %>" method="post">
+            <input type="text" name="image_url" id="">
+            <button>Submit</button>
+        </form>
+    </article>
+</section>
