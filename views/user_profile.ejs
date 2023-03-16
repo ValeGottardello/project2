@@ -1,30 +1,30 @@
 <% for (let detail of userDetails) { %>
-    <section>
+    <section class="wrapper-main">
+        <div>
+            <img src="<%= detail.image_url %>" alt="user photo">
+        </div>
         <article class="wrapper-profile">
             <div>
-                <img src="<%= detail.image_url %>" alt="user photo">
-                <p>
+                <p class="profile-un">
                     <%= detail.name %>
                 </p>
-                <p>
+                <p class="username">
                     From <%= detail.country %>
                 </p>
-            </div>
-            <div>
-                <h3>Learning Languages</h3>
-                <p>
+                <h3 class="title-card">Learning Languages</h3>
+                <p class="username">
                     <%= detail.learn_lang %>
                 </p>
             </div>
             <div>
-                <h3>Native Language</h3>
-                <p>
+                <h3 class="title-card">Native Language</h3>
+                <p class="username">
                     <%= detail.native_lang %>
                 </p>
             </div>
             <div>
-                <h3>About Me</h3>
-                <p>
+                <h3 class="aboutme">About Me</h3>
+                <p class="username">
                     <%= detail.about_me %>
                 </p>
             </div>

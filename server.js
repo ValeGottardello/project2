@@ -22,9 +22,8 @@ const userController = require("./controllers/user_controller")
 
 const expressLayouts = require("express-ejs-layouts")
 
-
-app.set("view engine", "ejs")
 app.use(logger)
+app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride) 

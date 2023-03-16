@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talkers</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Sawarabi+Mincho&family=Yeseva+One&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav>
-        <% if (isLoggedIn()) { %>
-            <form action="/dash">
-                <button>Community</button>
-            </form>
-            <form action="/sessions" method="post">
-                <input type="hidden" name="_method" value="delete" />
-                <button>Logout</button>
-            </form>
-            <form action="/users/<%= currentUser.id%>" >
-                <button>Setting account</button>
-            </form>
-            <form action="/users/<%= currentUser.id%>/profile">
-                <button>My Porfile</button>
-            </form>
-            <form action="/post">
-                <button>Feed</button>
-            </form>
-            <form action="/post/newpost">
-                <button>Post</button>
-            </form>      
-        <% } %>
-        </nav>
-    </header>
 
-    <%- body %>
+<body>
+    <% if (isLoggedIn()) { %>
+        <header class="navbar-layout">
+            <nav>
+                <form action="/dash">
+                    <button>Community</button>
+                </form>
+                <form action="/post">
+                    <button>Feed</button>
+                </form>
+                <form action="/users/<%= currentUser.id%>/profile">
+                    <button>My Porfile</button>
+                </form>
+                <form action="/post/<%= currentUser.id %>/myposts">
+                    <button>My posts</button>
+                </form>
+                <form action="/post/newpost">
+                    <button>Make a post</button>
+                </form>
+                <form action="/users/<%= currentUser.id%>">
+                    <button>Setting account</button>
+                </form>
+                <form action="/sessions" method="post">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button>Logout</button>
+                </form>
+            </nav>
+        </header>
+        <% } %>
+            <%- body %>
 </body>
+
 </html>

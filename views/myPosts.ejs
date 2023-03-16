@@ -1,19 +1,18 @@
-<section>
-    <div class="wrapper-cards">
+
+    <section class="wrapper-cards">
         <% for (let post of myPosts) {%>
-            <article class="ui-card">
-                <a href="/post/<%= post.id %>/singlepost?user_name=<%=post.user_name%>&image_url=<%=post.image_url%>">
-                    <img src="<%= post.image_url %>" alt="photo">
-                </a>
-                <footer class="ui-card-footer">
-                    <h4>
-                        Added by <a href="/users/<%= post.user_id %>/profile">
-                            <%= post.user_name %>
-                        </a>
-                    </h4>
-                    <span>On <%= post.date %></span>
-                </footer>
-            </article>
+        <article class="ui-card">
+            <a href="/post/<%= post.id %>/singlepost?user_name=<%=post.user_name%>&image_url=<%=post.image_url%>" class="anchor-post">
+                <img src="<%= post.image_url %>" alt="photo">
+            </a>
+            <div>
+                <h4 class="title-card">
+                    Added by me, <a href="/users/<%= post.user_id %>/profile">
+                        <%= post.user_name %>
+                    </a>
+                </h4>
+                <span class="footer-card">On <%= post.date %></span>
+            </div>
+        </article>    
         <% }%>
-    </div>
-</section>
+    </section>
