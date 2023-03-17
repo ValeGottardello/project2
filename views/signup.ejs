@@ -1,8 +1,8 @@
-<div>
-    <h2>Create a user</h2>
-    <div>
-        <form action="/users" method="post">
-            <div>
+<section class="wrapper">
+    <div class="column">
+        <h2 class="title-welcome-page">Create a user</h2>
+        <div>
+            <form action="/users" method="post" class="column">
                 <label for="username">Your Username</label>
                 <input type="text" name="username" id="" required />
                 <label for="name">Your name</label>
@@ -13,49 +13,35 @@
                 <input type="text" name="country" id="" required />
                 <label for="image_url">Profile photo</label>
                 <input type="text" name="image_url" id="" required />
-                <div>
-                    <label for="learn_lang">Learning Languages</label>
-                    <select name="learn_lang" required>
-                        <option value="English">English</option>
-                        <option value="Spanish">Spanish</option>
-                        <option value="Italian">Italian</option>
-                        <option value="Mandarin">Mandarin</option>
-                        <option value="Indonesian">Indonesian</option>
-                        <option value="Japanese">Japanese</option>
-                        <option value="Portuguese">Portuguese</option>
-                    </select>
-                </div>
-                <div>
-                    <div>
-                        <label for="native_lang">Native Languages</label>
-                        <select name="native_lang" required>
-                            <option value="English">English</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="Italian">Italian</option>
-                            <option value="Mandarin">Mandarin</option>
-                            <option value="Indonesian">Indonesian</option>
-                            <option value="Japanese">Japanese</option>
-                            <option value="Portuguese">Portuguese</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <label for="lang_level">Choose your language level</label>
-                    <div>
-                        <input type="radio" name="lang_level" id="" value="Beginner" checked />
-                        <label for="Beginner">Beginner</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="lang_level" id="" value="Intermediate" checked />
-                        <label for="">Intermediate</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="lang_level" id="" value="Advanced" checked />
-                        <label for="">Advanced</label>
-                    </div>
-                </div>
+                <label for="learn_lang">Learning Languages</label>
+                <select name="learn_lang" required>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Portuguese">Portuguese</option>
+                </select>
+                <label for="native_lang">Native Languages</label>
+                <select name="native_lang" required>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Portuguese">Portuguese</option>
+                </select>
+                <label for="lang_level">Choose your language level</label>
+                <input type="radio" name="lang_level" id="" value="Beginner" checked />
+                <label for="Beginner">Beginner</label>
+                <input type="radio" name="lang_level" id="" value="Intermediate" checked />
+                <label for="">Intermediate</label>
+                <input type="radio" name="lang_level" id="" value="Advanced" checked />
+                <label for="">Advanced</label>
                 <button>Continue</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+</section>

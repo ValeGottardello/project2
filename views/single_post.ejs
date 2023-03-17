@@ -1,42 +1,43 @@
-<section>
-    <article>
+<section class="wrapper-main">
+    <div>
+        <img src="<%= imageUrl %>" alt="">
+        <h4>By <%= userName %>
+        </h4>
         <div>
-            <img src="<%= imageUrl %>" alt="">
-            <div>
-                <h4>By <%= userName %></h4>
-                <!-- if is your post your can delete -->
-                <% if (currentUser.username === userName) {%>
+            <!-- if is your post your can delete -->
+            <% if (currentUser.username===userName) {%>
                 <form action="/post/<%= postId %>" method="post">
                     <input type="hidden" name="_method" value="delete">
-                    <button>Delete</button>     
+                    <button>Delete</button>
                 </form>
-            </div>
-                <% } %>
-        </div>
-        <div>
-            <% for (let comment of postComments) {%>
-                <div>
-                    <p><%= comment.comment %></p>
-                    <span>By <%= comment.user_name %>></span>
-                </div>
-                <% if (currentUser.username === comment.user_name) {%>
-                    <form action="/comment/<%= comment.id %>" method="post">
-                        <input type="hidden" name="_method" value="delete">
-                        <input type="hidden" name="post_id" value="<%= postId %>" />
-                        <button>Delete</button>     
-                    </form>
-                <% } %>  
             <% } %>
         </div>
-    </article>
-    <article>
-        <form action="/comment" method="post">
-            <input type="hidden" name="post_id" value="<%= postId %>" />
-            <input type="hidden" name="user_name" value="<%=currentUser.username %>" />
-            <textarea name="comment" id="" cols="40" rows="10">
+    </div>
+    <article class="wrapper-post">
+        <div>
+            <% for (let comment of postComments) {%>
+                <p>
+                    <%= comment.comment %>
+                </p>
+                <span>By <%= comment.user_name %>></span>
+                <% if (currentUser.username===comment.user_name) {%>
+                <form action="/comment/<%= comment.id %>" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="post_id" value="<%= postId %>" />
+                    <button>Delete</button>
+                </form>
+            <% } %>
+            <% } %>
+        </div>
+        <div class="textarea">
+            <form action="/comment" method="post">
+                <input type="hidden" name="post_id" value="<%= postId %>" />
+                <input type="hidden" name="user_name" value="<%=currentUser.username %>" />
+                <textarea name="comment" id="" cols="80" rows="5">
 
-            </textarea>
-            <button>Send</button>
-        </form>
+                </textarea>
+                <button>Send</button>
+            </form>
+        </div>
     </article>
 </section>

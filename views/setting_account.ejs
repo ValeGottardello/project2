@@ -1,25 +1,20 @@
-<section>
-    <article>
-        <form action="/users/<%= currentUser.id%>" method="post">
-            <input type="hidden" name="_method" value="delete" />
-            <button>Delete your account</button>
-        </form>
-    </article>
-    <article>
-        <h3>Change your password</h3>
-        <form action="/users/<%= currentUser.id%>" method="post">
-            <input type="hidden" name="_method" value="put" />
-            <label for="">Old password</label>
-            <input type="password" name="oldpassword" />
-            <label for="">New password</label>
-            <input type="password" name="newpassword" />
-            <label for="">Password confirmation</label>
-            <input type="password" name="password" />
-            <button>Change</button>
-        </form>
-    </article>
-    <article>
+<section class="wrapper-sett">
+    <div class="column-elem">
         <div>
+            <h3>Change your password</h3>
+            <form action="/users/<%= currentUser.id%>" method="post">
+                <input type="hidden" name="_method" value="put" />
+                <label for="">Old password</label>
+                <input type="password" name="oldpassword" />
+                <label for="">New password</label>
+                <input type="password" name="newpassword" />
+                <label for="">Password confirmation</label>
+                <input type="password" name="password" />
+                <button>Change</button>
+            </form>
+        </div>
+        <div>
+            <h3>Update your profile</h3>
             <form action="/users/<%= currentUser.id%>/profile" method="post">
                 <label>About me</label>
                 <input type="hidden" name="_method" value="put">
@@ -29,6 +24,12 @@
                 <input type="text" name="image_url">
                 <button>Post</button>
             </form>
+            <div class="delete">
+                <form action="/users/<%= currentUser.id%>" method="post">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button>Delete your account</button>
+                </form>
+            </div>
         </div>
-    </article>
+    </div>
 </section>

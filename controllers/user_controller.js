@@ -18,7 +18,7 @@ router.post("/users", (req, res) => {
     const learn_lang = req.body.learn_lang
     const native_lang = req.body.native_lang
     const lang_level = req.body.lang_level
-    const imageUrl = req.body.imageUrl
+    const imageUrl = req.body.image_url
 
     bcrypt.genSalt(10, (err, salt) => {
 
@@ -28,7 +28,7 @@ router.post("/users", (req, res) => {
 
             // console.log(sql);
             // res.send("ok")
-            db.query(sql, [username, name,digestedPassword, imageUrl, country, learn_lang, native_lang, lang_level], (err, dbRes) => {
+            db.query(sql, [username, name, digestedPassword, imageUrl, country, learn_lang, native_lang, lang_level], (err, dbRes) => {
                 if (err) {
                     console.log(err);
                     res.render('signup')
@@ -116,6 +116,14 @@ router.put('/users/:id/profile', ensureLoggedIn, (req, res) => {
             res.redirect('/dash') 
         }
     })
+})
+
+router.get("/users/serch", (req,res) => {
+    res.render("search")
+})
+
+router.get("users/serchuser", (req,res) => {
+
 })
 
 module.exports = router
