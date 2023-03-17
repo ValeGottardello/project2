@@ -1,15 +1,9 @@
 <section class="wrapper-cards">
     <% for (let profile of users) {%>
-        <!-- to dont see my profile in the dashboard, just the other users profiles -->
-        <% if (profile.id !==currentUser.id) {%>
             <a href="/dash/<%= profile.id %>" class="ui-card-anchor">
                 <article class="ui-card">
-                    
-                        <!-- <img src="< %= profile.image_url %>" alt="profile photo"> -->
-                    
-                    <div class="cards">
+                    <div>
                         <h4 class="username">
-                            <!-- add icon -->
                             <%= profile.name %>
                         </h4>
                         <div>
@@ -31,5 +25,4 @@
                 </article>
             </a>
             <% }%>
-                <% } %>
 </section>

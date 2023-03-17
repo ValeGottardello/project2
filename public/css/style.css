@@ -1,28 +1,12 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    /* border: 1px solid red; */
     list-style: none;
     text-decoration: none;
     font-family: 'Yeseva One', cursive;
-
-
-    /*  VARIABLES
-        LETTER: SMALL #3A0CA3
-               BIG #7209B7
-        BORDER #4CC9F0
-        BUTTONS #4361EE
-        SHADOWS AND HOVERS #F72585
-
-        FONT FAMILY
-        WELCOME lOBSTER
-        MOST Sawarabi Mincho
-        BOTTONS Yeseva One
-        font-family: 'Lobster', cursive;
-font-family: 'Sawarabi Mincho', serif;
-font-family: 'Yeseva One', cursive;
-    */
+    color: black;
 }
+
 
 /* welcome page */
 .wrapper-wp {
@@ -99,7 +83,7 @@ font-family: 'Yeseva One', cursive;
     margin: 5% auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 25px;
 }
 
 .ui-card-anchor {
@@ -109,8 +93,7 @@ font-family: 'Yeseva One', cursive;
 .ui-card {
     padding: 20px;
     border-radius: 10px 10px 10px 10px;
-    box-shadow: 0px 1px 25px 4px rgb(70, 70, 70);
-    color: #F72585;
+    box-shadow: 0px 1px 15px 2px #F72585;
     display: grid;
     grid-template-rows: 3fr 1fr;
     height: 100%;
@@ -285,5 +268,8 @@ form>button:hover {
     justify-content: center;
     gap: 10px;
     border-radius: 10px 10px 10px 10px;
-    box-shadow: 0px 1px 25px 4px rgb(70, 70, 70);
+    box-shadow: 0px 1px 25px 4px #464646;
+}
+.cards{
+    color: black;
 }

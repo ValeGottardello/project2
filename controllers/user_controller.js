@@ -118,12 +118,26 @@ router.put('/users/:id/profile', ensureLoggedIn, (req, res) => {
     })
 })
 
-router.get("/users/serch", (req,res) => {
+router.get("/search", (req,res) => {
     res.render("search")
 })
 
-router.get("users/serchuser", (req,res) => {
+router.post("/search/user", (req,res) => {
+    const learnLang = req.body.learn_lang
+    const nativeLang = req.body.native_lang
+    const langLevel = req.body.lang_level
 
+    const sql = `SELECT * FROM users WHERE learn_lang = $1 AND native_lang = $2 OR lang_level = $3;`
+
+    db.query(sql, [learnLang, nativeLang, langLevel], (err,dbRes) => {
+        if (err) {
+            console.log(err);
+        }else {
+            const users = dbRes.rows
+            res.render("searchusers", {users})
+        }
+    })
 })
 
 module.exports = router
+

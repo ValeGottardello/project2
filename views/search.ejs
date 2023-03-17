@@ -1,14 +1,33 @@
-<section class="wrapper-sett">
-    <div class="column-elem">
-        <div class="login">
-            <h2 class="title-welcome-page">Search user by</h2>
-        </div>
+<section class="wrapper">
+    <div class="column">
+        <h2 class="title-welcome-page">Search user by</h2>
         <div>
-            <form action="/user/searchuser" class="wp-buttons">
-                <label for="">Learning language</label>
-                <input type="text" name="lang_level" id="" required />
-                <label for="">Native language</label>
-                <input type="password" name="native_lang" id="" required />
+            <form action="/search/user" class="column" method="post">
+                <label for="learn_lang">Learning Languages</label>
+                <select name="learn_lang" required>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Portuguese">Portuguese</option>
+                </select>
+                <label for="native_lang">Native Languages</label>
+                <select name="native_lang" required>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Portuguese">Portuguese</option>
+                </select>
+                <label for="lang_level">Choose your language level</label>       
+                <label for="Beginner">Beginner</label>   <input type="radio" name="lang_level" id="" value="Beginner" checked />
+                <label for="">Intermediate</label> <input type="radio" name="lang_level" id="" value="Intermediate" checked />
+                <label for="">Advanced</label>
+                <input type="radio" name="lang_level" id="" value="Advanced" checked />
                 <button>Continue</button>
             </form>
         </div>
