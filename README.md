@@ -9,7 +9,7 @@
 ### It used REST URL Naming Convention for URL path with GET, POST, PUT, and DELETE http methods. Look at the sheet routing [here](https://docs.google.com/spreadsheets/d/1MeW2_r51WHHO92wOqDIr4oJeQmrz1-T17Wl2IMBUmqY/edit?usp=sharing).
 ### Board and wireframes used [Board](./public/images/board.png) [Wireframes](./public/images/wireframes.jpeg)
 
-## Some of the features my game version includes are:
+## Some of the features of the app includes are:
 
 * It allows the users sign up and log in.
 * Make their profile with data as language learning, native language and language level, residential country.
