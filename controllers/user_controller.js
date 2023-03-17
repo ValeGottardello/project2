@@ -127,7 +127,7 @@ router.post("/search/user", (req,res) => {
     const nativeLang = req.body.native_lang
     const langLevel = req.body.lang_level
 
-    const sql = `SELECT * FROM users WHERE learn_lang = $1 AND native_lang = $2 OR lang_level = $3;`
+    const sql = `SELECT * FROM users WHERE learn_lang = $1 OR native_lang = $2 AND lang_level = $3;`
 
     db.query(sql, [learnLang, nativeLang, langLevel], (err,dbRes) => {
         if (err) {
