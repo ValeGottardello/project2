@@ -26,13 +26,13 @@
 * Ejs, 
 * Npm dependecies: bcrypt, express-ejs-layouts, memorystore, method-override. 
 
-![Home](images/home.png)
-![Sign Up](images/signup.png)
-![Community](images/community.png)
-![My profile](images/myprofile.png)
-![Posts](images/posts.png)
-![Search users](images/search.png)
-![Coments](images/coments.png)
+![Home](./public/images/home.png)
+![Sign Up](./public/images/signup.png)
+![Community](./public/images/community.png)
+![My profile](./public/images/myprofile.png)
+![Posts](./public/images/posts.png)
+![Search users](./public/images/search.png)
+![Coments](./public/images/coments.png)
 
 
 ## By M. Valentina Gottardello
