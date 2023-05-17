@@ -1,0 +1,67 @@
+.wrapper-sett {
+    padding: 20px;
+    width: 40%;
+    margin: 15vh auto;
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 1px 25px 4px rgb(70, 70, 70);
+}
+
+.column-elem>div>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+
+}
+
+.column-elem>div>form>button {
+    align-self: flex-start;
+}
+
+.column-elem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+}
+
+.column-elem>div>h3 {
+    font-size: 1rem;
+    margin: 20px;
+    font-family: 'Sawarabi Mincho', serif;
+    text-transform: uppercase;
+}
+
+
+.delete{
+    margin-top: 36px;
+}
+
+.column-elem>.login{
+    align-self:center ;
+    margin-right: 50px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.wrapper{
+    padding: 20px;
+    width: 40%;
+    margin: 15vh auto;
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 1px 25px 4px #464646;
+}
+.cards{
+    color: black;
+}

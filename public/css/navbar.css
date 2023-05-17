@@ -1,0 +1,26 @@
+.navbar-layout {
+    margin: 0 auto;
+}
+
+.navbar-layout>nav {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-layout>nav>form>button {
+    font-size: 1.5rem;
+    height: 40px;
+    border: none;
+    border-left: 3px solid #F72585;
+    color: black;
+    background-color: white;
+    font-family: 'Lobster', cursive;
+}
+
+.navbar-layout>nav>form>button:hover {
+    color: #56CFE1;
+}
