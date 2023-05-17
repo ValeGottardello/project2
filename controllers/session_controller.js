@@ -27,7 +27,6 @@ router.post('/sessions', (req, res) => {
                 res.redirect('/dash')
             } else {
                 console.log(err);
-                //maybe event listener with alerto of wrong password
                 res.redirect('/login')
             }
         })

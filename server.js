@@ -5,7 +5,6 @@ const session = require('express-session')
 const MemoryStore = require("memorystore")(session)
 
 //middlewares
-
 const setCurrentUser = require("./middlewares/set_current_user")
 const viewHelpers = require("./middlewares/view_helpers")
 const logger = require("./middlewares/logger")

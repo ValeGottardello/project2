@@ -26,8 +26,6 @@ router.post("/users", (req, res) => {
 
             const sql = `INSERT INTO users (username, name, password_digest, image_url, country, learn_lang, native_lang, lang_level) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id;`
 
-            // console.log(sql);
-            // res.send("ok")
             db.query(sql, [username, name, digestedPassword, imageUrl, country, learn_lang, native_lang, lang_level], (err, dbRes) => {
                 if (err) {
                     console.log(err);
@@ -63,7 +61,7 @@ router.put('/users/:id', ensureLoggedIn, (req, res) => {
                     res.redirect("/")
                 } else {
                     req.session.userId = dbRes.rows[0].id
-                    res.redirect('/dash') //then change to own profile
+                    res.redirect('/dash') 
                 }
             })
         })
